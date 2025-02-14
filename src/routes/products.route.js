@@ -11,7 +11,7 @@ const productos = [
 route.get('/', (req, res) => {
     const { limit } = req.query;
     const productosLimitados = limit ? productos.slice(0, limit) : productos;
-    res.json({ productos: productosLimitados });
+    res.render('home', { productos: productosLimitados });
 });
 
 route.get('/:pid', (req, res) => {
